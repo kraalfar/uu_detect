@@ -90,6 +90,9 @@ class Classifier(nn.Module):
 
         return self.decision_function_loader(dataloader)
 
+    def predict(self, data):
+        return self.decision_function(data)[0]
+
     def get_optimizers(self, lr, **kwargs):
         self.optimizers = [opt.Adam(self.model.parameters(), lr=lr)]
 
