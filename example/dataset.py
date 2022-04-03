@@ -18,7 +18,7 @@ class PUDataset:
         return x, y, self.s[i]
 
 
-def get_data():
+def get_data(c=0.5):
     train = torchvision.datasets.CIFAR10("./data", train=True,
                                          transform=transforms.ToTensor(),
                                          download=True)
@@ -27,7 +27,7 @@ def get_data():
                                         transform=transforms.ToTensor(),
                                         download=True)
 
-    traindata = PUDataset(train)
+    traindata = PUDataset(train, c)
     testdata = PUDataset(test)
 
     return traindata, testdata
