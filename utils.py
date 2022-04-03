@@ -2,14 +2,13 @@ import scipy.stats as stats
 from sklearn.model_selection import train_test_split
 import numpy as np
 
+
 def estimate_p_crit(model, sample, test, iters=10):
     pv = []
     for _ in range(iters):
-        # not sure here. maybe wee need to make new example of type(sample)
         sample1, sample2 = train_test_split(sample)
         score1, score1 = model.predict(sample1), model.predict(sample2)
         pv.append(test(score1, score1).pvalue)
-
 
     return np.mean(pv)
 

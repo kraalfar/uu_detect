@@ -27,7 +27,6 @@ def unreliable_data_detector(model,
     pos_score = model.predict(sample1)
     unl_score = model.predict(sample2)
 
-
     pv = test(pos_score, unl_score).pvalue
 
     return pv, p_crit
