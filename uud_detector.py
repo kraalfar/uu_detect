@@ -9,9 +9,9 @@ def unreliable_data_detector(model,
     """
         :param model: model with predict method. Predict function should take sample from data and return anomaly scores
                         for each sample as numpy array
-        :param sample1: sample from positive distributino for high alpha test and from unlabeled train distribution for
+        :param sample1: sample from positive distribution for high alpha test and from unlabeled train distribution for
                         negative distribution shift test.
-        :param sample2: sample from unlabeled distributino for high alpha test and from unlabeled test distribution for
+        :param sample2: sample from unlabeled distribution for high alpha test and from unlabeled test distribution for
                         negative distribution shift test
         :param p_crit: threshold for p_value. If None will be estimated from automatically. For negative shift we
                        suggest to set p_crit to None. If model is randomly initialized we suggest setting p_crit=None.
